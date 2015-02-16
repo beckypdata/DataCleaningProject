@@ -42,7 +42,7 @@ resultdata <- bind_cols(subjdata, actdata, msrdata) %>%
 
 # write the tidy dataset
 
-write.table(gresult, "tidydata.txt", row.names=FALSE)
+write.table(resultdata, "tidydata.txt", row.names=FALSE)
 
 
 
