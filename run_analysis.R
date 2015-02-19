@@ -1,3 +1,5 @@
+library(dplyr)
+
 # Read the datasets
 
 xtest <- read.table("test\\X_test.txt")
@@ -20,8 +22,8 @@ features$V2 <- gsub("fGravity","FreqDomainGravity",features$V2)
 features$V2 <- gsub("tGravity","TimeDomainGravity",features$V2) 
 features$V2 <- gsub("Acc","Accelerometer",features$V2) 
 features$V2 <- gsub("Gyro","Gyroscope",features$V2) 
-features$V2 <- gsub("[-,)(]","_",features$V2) 
-features$V2 <- gsub("__","",features$V2)
+features$V2 <- gsub("[)(]","",features$V2) 
+features$V2 <- gsub("[-,]","_",features$V2) 
 features$V2 <- gsub("_$","",features$V2)
 
 # Merge the datasets and calculate summary statistics 
@@ -36,15 +38,12 @@ resultdata <- bind_cols(subjdata, actdata, msrdata) %>%
   merge(activities,all=TRUE) %>%
   select(Subject, Activity, contains("mean"), contains("std")) %>%
   select(-contains("angle")) %>%
-  arrange(Subject,Activity) %>%
   group_by(Subject, Activity) %>%
   summarise_each(funs(mean))
 
 # write the tidy dataset
 
 write.table(resultdata, "tidydata.txt", row.names=FALSE)
-
-
 
 
 
