@@ -32,4 +32,4 @@ Step 3: Validate that a new dataset named tidydata.txt has been stored in workin
 
 Step 4: Open the compareTidyDatasets.R script, and validate the fileURL reflects the tidy dataset indicated in the Coursera submission.  
 
-Step 4: Run the compareTidyDatasets.R script from R console.  Script downloads the Coursera submitted tidy dataset and compares to the dataset generated in Step #2.  Result of TRUE will display to console.  If result displays FALSE, review previous steps to ensure all were followed.
+Step 5: Run the compareTidyDatasets.R script from R console.  Script downloads the Coursera submitted tidy dataset and compares to the dataset generated in Step #2.  Result of TRUE will display to console.  If result displays FALSE, review previous steps to ensure all were followed.
