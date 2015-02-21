@@ -18,9 +18,9 @@ As stated in the CodeBook.md, it is assumed that the original study data has bee
 
 ####Validation Setup
 
-Step 1: Copy the run_analysis.R script in this GitHub directory to the local directory containing the study data.  This can be accomplished with git commands, or by rt-click on the file and selecting "Save link as"
+Step 1: Copy the run_analysis.R script in this GitHub directory to the local directory containing the extracted study data.  This can be accomplished with git, or by accessing the Raw form of the file, copying script contents, and saving to local directory
 
-Step 2: Copy the compareTidyDatasets.R script down to directory containing the study data.
+Step 2: Copy the compareTidyDatasets.R script down to directory containing the study data in manner similar to step #1
 
 ####Validation Steps
 
@@ -30,6 +30,6 @@ Step 2: Run the run_analysis.R script from R console.  This may take several sec
 
 Step 3: Validate that a new dataset named tidydata.txt has been stored in working directory.
 
-Step 4: Open the compareTidyDatasets.R script, and validate the fileURL reflects the tidy dataset indicated in the Coursera submission, or this URL https://s3.amazonaws.com/coursera-uploads/user-3fb4c803aacb94770fd872db/973498/asst-3/bc29cb20b5d311e4b768370a143eec8d.txt
+Step 4: Open the compareTidyDatasets.R script, and validate the fileURL reflects the tidy dataset indicated in the Coursera submission
 
 Step 5: Run the compareTidyDatasets.R script from R console.  Script downloads the Coursera submitted tidy dataset and compares to the dataset generated in Step #2.  Result of TRUE will display to console.  If result displays FALSE, review previous steps to ensure all were followed.
