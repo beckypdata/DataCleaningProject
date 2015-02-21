@@ -2,7 +2,6 @@
 
 #Study Design
 
----
 
 ###The Original Study
 
@@ -35,11 +34,11 @@ data set.
 
 ###Approach Within Project Script
 
-1. *Load dplyr package*
+  1. *Load dplyr package*
 
 Functions from this package will simplify R script steps below
 
-2. *Read the datasets*
+  2. *Read the datasets*
 
 Reads are completed for the individual files from the training directory and the test directory.  Script then merges into a dataset comparable to the original study prior to random division. Fast read (fread) cannot be used in R for this as the fread function incorrectly identifies number of columns and subsequently encounters read error
 
@@ -49,7 +48,7 @@ Reads are completed for the individual files from the training directory and the
 + Subject datasets represent the 1-30 subjects; rows align 1:1 with X and Y 
 + Activity_labels.txt contains the descriptions for each of the 1-6 activities
 
-3. *Variable name cleanup*
+  3. *Variable name cleanup*
 
 Variable names as provided by original study indicate whether the vector was measured by the accelerometer ("Acc") or gyroscope ("Gyro"); whether the derived vector represents body ("fBody") or gravity ("fGravity"); whether the calculations were completed over time domain ("tBody") or frequency domain ("fBody").  As 
 part of the effort to create tidy data, these variable names will be expanded 
@@ -67,7 +66,7 @@ replaced with "_"
 + study variables include () presumably to indicate derivation by functions.  These are invalid for R variable names and could be inaccurately viewed as 
 functions in subsequent analysis
 
-4. *Merge the datasets*
+  4. *Merge the datasets*
     
 + bind rows for each of the X, Y, and Subject datasets.  This results in 
 10299 rows for each dataset
@@ -82,7 +81,7 @@ original dataset
 Critically important that this merge not be done until original dataset 
 reconstructed as merge in R can move rows of data frame in undefined order
 
-5. *Select the desired data and generate tidy dataset*
+  5. *Select the desired data and generate tidy dataset*
 
 Decision must be made as to whether to use long form or wide form of tidy dataset.  Given the nature of the study vectors derivation from initial phone signals, it would be difficult to state that these measurements are independent.  As such, it is difficult to store them as separate rows/observations which imply independent observations.  
 
@@ -99,7 +98,7 @@ to a function and do not represent a mean measurement
 statistic for each group
 + calculate mean for each variable vector by subject and activity
 
-6. *Write the tidy dataset*
+  6. *Write the tidy dataset*
 
 Write the result as a txt file; ensure no row names in output
 
@@ -107,7 +106,6 @@ Write the result as a txt file; ensure no row names in output
 
 #Code Book
 
----
 
 ###Original Study derived variables from initial signals
 
