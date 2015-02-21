@@ -6,6 +6,8 @@ This README is associated with an assignment to complete data cleaning for data 
 
 Please refer to the CodeBook.md file in this directory for overview information on the original study, references to that study, as well as details on the data cleaning assignment that has been completed.
 
+Detailed steps for analysis scripts can be found in the Study Design section of the CodeBook.md.
+
 Once the CodeBook.md has been reviewed, please proceed with the following to validate the results of the data cleaning assignment.
 
 ####Data Setup
