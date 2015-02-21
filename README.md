@@ -10,15 +10,15 @@ This README is associated with an assignment to complete data cleaning for data 
 
 ####Code Book
 
-Please refer to the CodeBook.md file in this directory for overview information on the original study, references to that study, as well as details on the data cleaning assignment.  Detailed steps, assumptions, and thought process related to the analysis script can be found in the Study Design section of the CodeBook.
+Please refer to the CodeBook.md file in this directory for overview information on the original study, references to that study, detailed information related to the data, as well as details on the data cleaning assignment.  Detailed steps, assumptions, and thought process related to the analysis script can be found in the Study Design section of the CodeBook.
 
 High level steps related to the analysis script include
 
 1. Load dplyr package
-2. Read the datasets
-3. Variable name cleanup
-4. Merge the datasets
-5. Select the desired data and generate tidy dataset
+2. Read the 6 datasets from original study
+3. Variable name cleanup to align to study documentation and R valid naming
+4. Merge the datasets ensuring order of merge from test and train directories is consistent for all files
+5. Generate tidy dataset: select the desired data columns, group by Subject and Activity, calculate mean
 6. Write the tidy dataset
 
 Once the CodeBook.md has been reviewed for further understanding, please proceed with the following to validate the results of the data cleaning assignment.
