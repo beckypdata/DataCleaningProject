@@ -18,7 +18,7 @@ As stated in the CodeBook.md, it is assumed that the original study data has bee
 
 ####Validation Setup
 
-Step 1: Copy the run_analysis.R script in this GitHub directory to the local directory containing the extracted study data.  This can be accomplished with git, or by accessing the Raw form of the file, copying script contents, and saving to local directory
+Step 1: Copy the run_analysis.R script in this GitHub directory to the local directory containing the extracted study data.  This can be accomplished with git, or by clicking on script in this Github directory, accessing the Raw form of the file, copying script contents, and saving to local directory
 
 Step 2: Copy the compareTidyDatasets.R script down to directory containing the study data in manner similar to step #1
 
