@@ -765,7 +765,7 @@ variable
 
 ###Tidy Data Set retained vectors; 79 total
 
-*Cleaned variable names *
+*Cleaned variable names*
 
 + TimeDomainBodyAccelerometer_mean_X (units m/s^2)
 + TimeDomainBodyAccelerometer_mean_Y (units m/s^2)
