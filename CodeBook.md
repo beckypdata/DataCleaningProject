@@ -88,7 +88,7 @@ Decision must be made as to whether to use long form or wide form of tidy datase
 Although it is not clear what subsequent analysis will be completed on the tidy 
 data, it is reasonable to assume that some level of correlation assessment 
 might be needed.  This will be best done by keeping these measurements as 
-individual columns, so the wide form will be utilized.  
+individual columns, so the wide form will be utilized.  If long form is needed, this can be easily accomplished with the melt() function and ID columns of "Subject" and "Activity".  
 
 + select columns "Subject" "Activity", and any that contain "mean" or "std"
 + exclude those columns with "angle" in the name as in viewing the original 
