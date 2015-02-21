@@ -15,10 +15,10 @@ Please refer to the CodeBook.md file in this directory for overview information 
 High level steps related to the analysis script include
 
 1. Load dplyr package
-2. Read the 6 datasets from original study
+2. Read the datasets from original study
 3. Variable name cleanup to align to study documentation and R valid naming
 4. Merge the datasets ensuring order of merge from test and train directories is consistent for all files
-5. Generate tidy dataset: select the desired data columns, group by Subject and Activity, calculate mean
+5. Generate tidy dataset: select the desired data columns, group by Subject and Activity, calculate mean value for each selected measurement within the group by
 6. Write the tidy dataset
 
 Once the CodeBook.md has been reviewed for further understanding, please proceed with the following to validate the results of the data cleaning assignment.
