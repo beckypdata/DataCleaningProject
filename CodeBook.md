@@ -65,12 +65,11 @@ functions in subsequent analysis
 
 *Step 4. Merge the datasets*
     
-+ bind rows for each of the X, Y, and Subject datasets.  This results in 
-10299 rows for each dataset
++ bind rows for each of the X, Y, and Subject datasets.  It is critically important that this be done in the exact sequence for all 3 combinations.  If X binds train data to end of test data, then Y and Subject must do the same.  This results in 10299 rows for each dataset
 + name the columns within each dataset; this is done at this stage to avoid 
-duplication of default name "V1" in the subsequent combined datasets
+duplication of R default name "V1" in the subsequent combined datasets
 + for the columns in the X datasets, merge the R script adjusted features 
-descriptions to provide meaningful column descriptions for each vector.  The names as provided in the features file are in exact order of values in X dataset, so assignment to X column names is done by position and does not require matching ID column 
+descriptions to provide meaningful column descriptions for each vector.  The names as provided in the features file are in exact order of values in X dataset, so assignment to X column names is done by position and does not require matching by ID column 
 + bind columns for Subject, Y, and X (in that order) to reconstruct the 
 original dataset
 + merge activity descriptions into the dataset using the column "ID". Critically important that this merge not be done until original dataset reconstructed as merge in R can move rows of data frame in undefined order
@@ -105,7 +104,7 @@ Write the result as a txt file; ensure no row names in output
 
 ####***Variable base names***
 
-The following base names were leveraged for naming of all subsequent estimated variables in the original study.  Units for all study estimated variables share the units of the original derived measurements.  These units are noted next to the base name below.  Units are not repeated for the derived measurements; those units are inherited from the base name.  
+The following base names were leveraged for naming of all subsequent estimated variables in the original study.  Units are noted next to the base name below.  Units are not repeated for the study derived measurements; units for those derived measurements are inherited from the base name.  
 
 All measurements were normalized and bounded with [-1,1]
 
@@ -616,7 +615,7 @@ All measurements were normalized and bounded with [-1,1]
 + fBodyBodyGyroMag-kurtosis()
 + fBodyBodyGyroJerkMag-kurtosis()
 
-*Energy of frequency interval within the 64 bins of FFT of each window*
+*Energy of frequency interval within the 64 bins of Fast Fourier Transform of each window*
 
 + fBodyAcc-bandsEnergy()-1,8
 + fBodyAcc-bandsEnergy()-9,16
@@ -762,7 +761,7 @@ variable
 
 *Cleaned variable names*
 
-Names were derived according to the steps indicated in script overview in Study Guide section above.  Only names were adjusted; no modification to original vector measure, derivation, or values
+Names were derived according to the steps indicated in script overview in Study Design section above.  Only names were adjusted; no modification to original vector measure, derivation, or values.  All measures thereby remain bounded [-1,1].
 
 + TimeDomainBodyAccelerometer_mean_X (units m/s^2)
 + TimeDomainBodyAccelerometer_mean_Y (units m/s^2)
