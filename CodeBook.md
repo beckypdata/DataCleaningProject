@@ -103,16 +103,14 @@ statistic for each group
 Write the result as a txt file; ensure no row names in output
 
 ---
-
 #Code Book
-
+---
 
 ###Original Study derived variables from initial signals
 
 ####***Variable base names***
 
-The following base names were leveraged for all subsequent estimated variables 
-in the study.  Units for all study estimated variables share the units of the original derived measurements.  These units are noted next to the base name below.  
+The following base names were leveraged for naming of all subsequent estimated variables in the study.  Units for all study estimated variables share the units of the original derived measurements.  These units are noted next to the base name below.  
 
 All measurements were normalized and bounded with [-1,1]
 
