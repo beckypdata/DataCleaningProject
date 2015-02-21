@@ -6,18 +6,15 @@
 ###The Original Study
 
 This data cleaning effort was based on a study conducted by the Center for 
-Machine Learning and Intelligent Systems.  Please refer to http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones for additional information on the study, and specifically on how study data was gathered.  The study involved 30 participants who each performed 6 activities while wearing a Samsung Galaxy S II on their waist.  The embedded accelerometer and gyroscope within the phone were used to capture linear acceleration (accelerometer) and angular velocity (gyroscope) 3-axial measurements at a constant rate of 50Hz.  These signals were then decomposed to derive body acceleration and gravity values at each observation point.  
+Machine Learning and Intelligent Systems.  Please refer to http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones for additional information on the study, and specifically on how study data was gathered.  The study involved 30 participants who each performed 6 activities while wearing a Samsung Galaxy S II on their waist.  The embedded accelerometer and gyroscope within the phone were used to capture linear acceleration (accelerometer) and angular velocity (gyroscope) 3-axial measurements at a constant rate of 50Hz.  These signals were decomposed to derive body acceleration and gravity components at each observation point.  
 
-Estimatations were then completed for each derived vector at same observation 
-points to include mean, std, max, min, etc over either a time domain or 
-frequency domain.  Complete set includes 561 vectors.  The derived dataset was 
-randomly divided into two datasets with 70% of the participant data stored in 
-the "training" data and 30% in the "test" data.
+Finally, summary vectors were derived from the body acceleration and gravity components vectors at same observation points using both time domain and frequency domain.  The result was a set of 561 vectors for each of the 30 participants, performing each of the 6 activities, at all sampling points.  This derived dataset was randomly divided into two datasets with 70% of the participant data stored in the "training" data and 30% in the "test" data.
+
+Specific summary vectors from the original study are detailed below in the Code Book section.  
 
 ###Accessing the Original Data
 
-For purposes of this assignment, it is assumed that data has been previously 
-downloaded.  If this has not been done, please follow these steps
+For purposes of this assignment, it is assumed that the original study data has been previously downloaded.  If this has not been done, please follow these steps
   
   * download https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
   
@@ -28,9 +25,9 @@ All subsequent steps should be completed from the local directory created
 ###Data Cleaning Project Goal
 
 Select vectors from the original study that represent mean and standard 
-deviation.  For each combination of subject and activity, calculate a 
-representative mean value for the selected vectors.  Store results in a tidy 
-data set. 
+deviation for each combination of subject and activity.  For the selected vectors, calculate a mean value.  Store results in a tidy data set. 
+
+The specific measurements retained from the original study (79 in total) are spelled out in the Code Book section below.  
 
 ###Approach Within Project Script
 
@@ -40,7 +37,7 @@ Functions from this package will simplify R script steps below
 
 *Step 2. Read the datasets*
 
-Reads are completed for the individual files from the training directory and the test directory.  Script then merges into a dataset comparable to the original study prior to random division. Fast read (fread) cannot be used in R for this as the fread function incorrectly identifies number of columns and subsequently encounters read error
+Reads are completed for the individual files from the training directory and the test directory.  A total of 6 files comprise the data needed to reconstruct the study dataset.  Script merges these 6 file into a dataset comparable to the study dataset that existed prior to random division into "training" and "test". Fast read (fread) cannot be used in R for the read as the fread function incorrectly identifies number of columns and subsequently encounters read errors.
 
 + X datasets represent the 561 vectors derived in the study, 1 column per vector
 + Features.txt contains the measurement names for those 561 derived vectors.  
@@ -53,14 +50,14 @@ Reads are completed for the individual files from the training directory and the
 Variable names as provided by original study indicate whether the vector was measured by the accelerometer ("Acc") or gyroscope ("Gyro"); whether the derived vector represents body ("fBody") or gravity ("fGravity"); whether the calculations were completed over time domain ("tBody") or frequency domain ("fBody").  As 
 part of the effort to create tidy data, these variable names will be expanded 
 within the script to provide more user friendly info.  Some additional measure 
-name cleanup was also necessary
+name cleanup was also necessary, specifically
 
 + some values do not align with study info, for example fBodyBody should be 
 fBody according to study documentation
 + duplicate measurement names have been created by the current naming 
-conventions.  These need to be resolved for subsequent steps of script to work 
+conventions.  These need to be resolved for subsequent steps of R script to work 
 accurately.  This is done by appending a unique identifier (index of the 
-variable within the 561 vectors) to the end of the variable name
+vector within the 561 vector set) to the end of the variable name
 + use of , and - are invalid characters for R variable names, and are 
 replaced with "_"
 + study variables include () presumably to indicate derivation by functions.  These are invalid for R variable names and could be inaccurately viewed as 
@@ -72,28 +69,26 @@ functions in subsequent analysis
 10299 rows for each dataset
 + name the columns within each dataset; this is done at this stage to avoid 
 duplication of default name "V1" in the subsequent combined datasets
-+ for the columns in the X datasets, merge the script adjusted features 
-descriptions.  These names remain in exact order of values in X dataset so that 
-assignment can be done by position and not require matching
++ for the columns in the X datasets, merge the R script adjusted features 
+descriptions to provide meaningful column descriptions for each vector.  The names as provided in the features file are in exact order of values in X dataset, so assignment to X column names is done by position and does not require matching ID column 
 + bind columns for Subject, Y, and X (in that order) to reconstruct the 
 original dataset
-+ merge activity descriptions into the dataset using the column "ID".  
-Critically important that this merge not be done until original dataset 
-reconstructed as merge in R can move rows of data frame in undefined order
++ merge activity descriptions into the dataset using the column "ID". Critically important that this merge not be done until original dataset reconstructed as merge in R can move rows of data frame in undefined order
 
 *Step 5. Select the desired data and generate tidy dataset*
 
-Decision must be made as to whether to use long form or wide form of tidy dataset.  Given the nature of the study vectors derivation from initial phone signals, it would be difficult to state that these measurements are independent.  As such, it is difficult to store them as separate rows/observations which imply independent observations.  
+Decision must be made as to whether to use long form or wide form of tidy dataset.  Given the nature of the study vectors decomposition and derivation from initial signals, it would be difficult to state that these measurements are independent.  As such, it is difficult to store them as separate rows/observations which imply independent observations.  
 
 Although it is not clear what subsequent analysis will be completed on the tidy 
 data, it is reasonable to assume that some level of correlation assessment 
-might be needed.  This will be best done by keeping these measurements as 
-individual columns, so the wide form will be utilized.  If long form is needed, this can be easily accomplished with the melt() function and ID columns of "Subject" and "Activity".  
+might be needed.  This will be easiest if these measurements are presented as 
+individual columns, so the wide form will be utilized.  If long form is needed, this can be easily accomplished with the melt() function using "Subject" and "Activity" as the ID columns.
+
+To complete the tidying of the data
 
 + select columns "Subject" "Activity", and any that contain "mean" or "std"
 + exclude those columns with "angle" in the name as in viewing the original 
-features names usage of mean in combination with angle were actually arguments 
-to a function and do not represent a mean measurement
+features names it is clear that mean actually referred to arguments of the angle function and did not represent a mean measurement
 + group by subject and activity in preparation for calculating summary 
 statistic for each group
 + calculate mean for each variable vector by subject and activity
@@ -110,41 +105,41 @@ Write the result as a txt file; ensure no row names in output
 
 ####***Variable base names***
 
-The following base names were leveraged for naming of all subsequent estimated variables in the original study.  Units for all study estimated variables share the units of the original derived measurements.  These units are noted next to the base name below.  
+The following base names were leveraged for naming of all subsequent estimated variables in the original study.  Units for all study estimated variables share the units of the original derived measurements.  These units are noted next to the base name below.  Units are not repeated for the derived measurements; those units are inherited from the base name.  
 
 All measurements were normalized and bounded with [-1,1]
 
 *3-axial time domain derived acceleration from accelerometer and gyroscope*
 
 + tBodyAcc - units m/s^2
-+ tGravityAcc - m/s^2
-+ tBodyGyro - radians/s
++ tGravityAcc - units m/s^2
++ tBodyGyro - units radians/s
 
 *3-axial time domain derived Jerk signals*
 
-+ tBodyAccJerk - m/s^2
-+ tBodyGyroJerk - radians/s
++ tBodyAccJerk - units m/s^2
++ tBodyGyroJerk - units radians/s
 
 *Euclidean norm calculated magnitude of time domain accelerometer and gyroscope signals*
 
-+ tBodyAccMag - m/s^2
-+ tGravityAccMag-m/s^2
-+ tBodyAccJerkMag-m/s^2
-+ tBodyGyroMag-radians/s
-+ tBodyGyroJerkMag-radians/s
++ tBodyAccMag - units m/s^2
++ tGravityAccMag - units m/s^2
++ tBodyAccJerkMag - units m/s^2
++ tBodyGyroMag - units radians/s
++ tBodyGyroJerkMag - units radians/s
 
 *3-axial frequency domain derived signals from accelerometer and gyroscope*
 
-+ fBodyAcc-m/s^2
-+ fBodyAccJerk-m/s^2
-+ fBodyGyro-radians/s
++ fBodyAcc - units m/s^2
++ fBodyAccJerk - units m/s^2
++ fBodyGyro - units radians/s
 
 *Euclidean norm calculated magnitude of frequency domain accelerometer and gyroscope signals*
 
-+ fBodyAccMag - m/s^2
-+ fBodyAccJerkMag - m/s^2
-+ fBodyGyroMag - radians/s
-+ fBodyGyroJerkMag - radians/s
++ fBodyAccMag - units m/s^2
++ fBodyAccJerkMag - units m/s^2
++ fBodyGyroMag - unts radians/s
++ fBodyGyroJerkMag - units radians/s
 
 ####***Estimated values from derived signals*** (561 vectors)
 
@@ -766,6 +761,8 @@ variable
 ###Tidy Data Set retained vectors; 79 total
 
 *Cleaned variable names*
+
+Names were derived according to the steps indicated in script overview in Study Guide section above.  Only names were adjusted; no modification to original vector measure, derivation, or values
 
 + TimeDomainBodyAccelerometer_mean_X (units m/s^2)
 + TimeDomainBodyAccelerometer_mean_Y (units m/s^2)
