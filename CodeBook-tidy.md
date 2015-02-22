@@ -1,6 +1,7 @@
 Subject  N  1-30  (no units) References each of the individual participants in the original study
 
 Activity AN (no units) References the specific activity participant was doing when measurements gathered
+
     LAYING
     SITTING
     STANDING
