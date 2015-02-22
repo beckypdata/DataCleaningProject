@@ -1,3 +1,13 @@
+Subject  N  1-30  (no units) References each of the individual participants in the original study
+
+Activity AN (no units) References the specific activity participant was doing when measurements gathered
+    LAYING
+    SITTING
+    STANDING
+    WALKING
+    WALKING_DOWNSTAIRS
+    WALKING_UPSTAIRS
+
 TimeDomainBodyAccelerometermeanX N [-1,1] m/s^2 X-axis time domain derived Body linear acceleration, estimated mean
 
 TimeDomainBodyAccelerometermeanY N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration, estimated mean
