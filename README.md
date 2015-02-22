@@ -86,7 +86,7 @@ duplication of R default name "V1" in the subsequent combined datasets
 descriptions to provide meaningful column descriptions for each vector.  The names as provided in the features file are in exact order of values in X dataset, so assignment to X column names is done by position and does not require matching by ID column 
 + bind columns for Subject, Y, and X (in that order) to reconstruct the 
 original dataset
-+ merge activity descriptions into the dataset using the column "ID". Critically important that this merge not be done until original dataset reconstructed as merge in R can move rows of data frame in undefined order
++ merge activity descriptions into the dataset using the column "ID". Critically important that this merge not be done until original dataset reconstructed as merge in R can move rows of data frame in undefined order.  Also critically important that the sort=FALSE argument be used as data loses alignment with correct headers otherwise
 
 *Step 5. Select the desired data and generate tidy dataset*
 

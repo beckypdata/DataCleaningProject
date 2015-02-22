@@ -33,7 +33,7 @@ colnames(actdata) <- "ID"
 msrdata <- bind_rows(xtrain,xtest) 
 colnames(msrdata) <- features$V2
 resultdata <- bind_cols(subjdata, actdata, msrdata) %>%
-  merge(activities,all=TRUE) %>%
+  merge(activities,by.x="ID",by.y="ID",sort=FALSE,all=TRUE) %>%
   select(Subject, Activity, contains("mean"), contains("std")) %>%
   select(-contains("angle")) %>%
   group_by(Subject, Activity) %>%
