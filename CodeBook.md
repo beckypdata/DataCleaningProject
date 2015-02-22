@@ -1,112 +1,14 @@
----
-
-#Study Design
----
-
-###The Original Study
-
-This data cleaning effort was based on a study conducted by the Center for 
-Machine Learning and Intelligent Systems.  Please refer to http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones for additional information on the study, and specifically on how study data was gathered.  The study involved 30 participants who each performed 6 activities while wearing a Samsung Galaxy S II on their waist.  The embedded accelerometer and gyroscope within the phone were used to capture linear acceleration (accelerometer) and angular velocity (gyroscope) 3-axial measurements at a constant rate of 50Hz.  These signals were decomposed to derive body acceleration and gravity components at each observation point.  
-
-Finally, summary vectors were derived from the body acceleration and gravity components vectors at same observation points using both time domain and frequency domain.  The result was a set of 561 vectors for each of the 30 participants, performing each of the 6 activities, at all sampling points.  This derived dataset was randomly divided into two datasets with 70% of the participant data stored in the "training" data and 30% in the "test" data.
-
-Specific summary vectors from the original study are detailed below in the Code Book section.  
-
-###Accessing the Original Data
-
-For purposes of this assignment, it is assumed that the original study data has been previously downloaded.  If this has not been done, please follow these steps
-  
-  * download https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-  
-  * extract all files to a local directory
-
-All subsequent steps should be completed from the local directory created
-
-###Data Cleaning Project Goal
-
-Select vectors from the original study that represent mean and standard 
-deviation for each combination of subject and activity.  For the selected vectors, calculate a mean value.  Store results in a tidy data set. 
-
-The specific measurements retained from the original study (79 in total) are spelled out in the Code Book section below.  
-
-###Approach Within Project Script
-
-*Step 1: Load dplyr package*
-
-Functions from this package will simplify R script steps below
-
-*Step 2. Read the datasets*
-
-Reads are completed for the individual files from the training directory and the test directory.  A total of 6 files comprise the data needed to reconstruct the study dataset.  Script merges these 6 file into a dataset comparable to the study dataset that existed prior to random division into "training" and "test". Fast read (fread) cannot be used in R for the read as the fread function incorrectly identifies number of columns and subsequently encounters read errors.
-
-+ X datasets represent the 561 vectors derived in the study, 1 column per vector
-+ Features.txt contains the measurement names for those 561 derived vectors.  
-+ Y datasets represent the activities performed; values will range 1-6 for the 6 activities measured; rows align 1:1 with X datasets.  Critical that these rows not move in subsequent steps and remain aligned with matching rows in X as they do in the study data
-+ Subject datasets represent the 1-30 subjects; rows align 1:1 with X and Y 
-+ Activity_labels.txt contains the descriptions for each of the 1-6 activities
-
-*Step 3. Variable name cleanup*
-
-Variable names as provided by original study indicate whether the vector was measured by the accelerometer ("Acc") or gyroscope ("Gyro"); whether the derived vector represents body ("fBody") or gravity ("fGravity"); whether the calculations were completed over time domain ("tBody") or frequency domain ("fBody").  As 
-part of the effort to create tidy data, these variable names will be expanded 
-within the script to provide more user friendly info.  Some additional measure 
-name cleanup was also necessary, specifically
-
-+ some values do not align with study info, for example fBodyBody should be 
-fBody according to study documentation
-+ duplicate measurement names have been created by the current naming 
-conventions.  These need to be resolved for subsequent steps of R script to work 
-accurately.  This is done by appending a unique identifier (index of the 
-vector within the 561 vector set) to the end of the variable name
-+ use of , and - are invalid characters for R variable names, and are 
-replaced with "_"
-+ study variables include () presumably to indicate derivation by functions.  These are invalid for R variable names and could be inaccurately viewed as 
-functions in subsequent analysis
-
-*Step 4. Merge the datasets*
-    
-+ bind rows for each of the X, Y, and Subject datasets.  It is critically important that this be done in the exact sequence for all 3 combinations.  If X binds train data to end of test data, then Y and Subject must do the same.  This results in 10299 rows for each dataset
-+ name the columns within each dataset; this is done at this stage to avoid 
-duplication of R default name "V1" in the subsequent combined datasets
-+ for the columns in the X datasets, merge the R script adjusted features 
-descriptions to provide meaningful column descriptions for each vector.  The names as provided in the features file are in exact order of values in X dataset, so assignment to X column names is done by position and does not require matching by ID column 
-+ bind columns for Subject, Y, and X (in that order) to reconstruct the 
-original dataset
-+ merge activity descriptions into the dataset using the column "ID". Critically important that this merge not be done until original dataset reconstructed as merge in R can move rows of data frame in undefined order
-
-*Step 5. Select the desired data and generate tidy dataset*
-
-Decision must be made as to whether to use long form or wide form of tidy dataset.  Given the nature of the study vectors decomposition and derivation from initial signals, it would be difficult to state that these measurements are independent.  As such, it is difficult to store them as separate rows/observations which imply independent observations.  
-
-Although it is not clear what subsequent analysis will be completed on the tidy 
-data, it is reasonable to assume that some level of correlation assessment 
-might be needed.  This will be easiest if these measurements are presented as 
-individual columns, so the wide form will be utilized.  If long form is needed, this can be easily accomplished with the melt() function using "Subject" and "Activity" as the ID columns.
-
-To complete the tidying of the data
-
-+ select columns "Subject" "Activity", and any that contain "mean" or "std"
-+ exclude those columns with "angle" in the name as in viewing the original 
-features names it is clear that mean actually referred to arguments of the angle function and did not represent a mean measurement
-+ group by subject and activity in preparation for calculating summary 
-statistic for each group
-+ calculate mean for each variable vector by subject and activity
-
-*Step 6. Write the tidy dataset*
-
-Write the result as a txt file; ensure no row names in output
-
----
-#Code Book
----
-
 ###Original Study derived variables from initial signals
+
+---
 
 ####***Variable base names***
 
-The following base names were leveraged for naming of all subsequent estimated variables in the original study.  Units are noted next to the base name below.  Units are not repeated for the study derived measurements; units for those derived measurements are inherited from the base name.  
+The following base names were leveraged for naming of all subsequent       estimated variables in the original study.  No measured values are associated with these names.  
 
-All measurements were normalized and bounded with [-1,1]
+Units are noted next to the base name below; estimated vectors from study share units with these base names.  
+
+All measurements were normalized and bounded with [-1,1] in the original study
 
 *3-axial time domain derived acceleration from accelerometer and gyroscope*
 
@@ -140,7 +42,11 @@ All measurements were normalized and bounded with [-1,1]
 + fBodyGyroMag - unts radians/s
 + fBodyGyroJerkMag - units radians/s
 
+---
+
 ####***Estimated values from derived signals*** (561 vectors)
+
+---
 
 *Mean value*
 
@@ -756,89 +662,3 @@ variable
 + angle(X,gravityMean)
 + angle(Y,gravityMean)
 + angle(Z,gravityMean)
-
-###Tidy Data Set retained vectors; 79 total
-
-*Cleaned variable names*
-
-Names were derived according to the steps indicated in script overview in Study Design section above.  Only names were adjusted; no modification to original vector measure, derivation, or values.  All measures thereby remain bounded [-1,1].
-
-+ TimeDomainBodyAccelerometer_mean_X (units m/s^2)
-+ TimeDomainBodyAccelerometer_mean_Y (units m/s^2)
-+ TimeDomainBodyAccelerometer_mean_Z (units m/s^2)
-+ TimeDomainGravityAccelerometer_mean_X (units m/s^2)
-+ TimeDomainGravityAccelerometer_mean_Y (units m/s^2)
-+ TimeDomainGravityAccelerometer_mean_Z (units m/s^2)
-+ TimeDomainBodyAccelerometerJerk_mean_X (units m/s^2)
-+ TimeDomainBodyAccelerometerJerk_mean_Y (units m/s^2)
-+ TimeDomainBodyAccelerometerJerk_mean_Z (units m/s^2)
-+ TimeDomainBodyGyroscope_mean_X (units radians/s)
-+ TimeDomainBodyGyroscope_mean_Y (units radians/s)
-+ TimeDomainBodyGyroscope_mean_Z (units radians/s)
-+ TimeDomainBodyGyroscopeJerk_mean_X (units radians/s)
-+ TimeDomainBodyGyroscopeJerk_mean_Y (units radians/s)
-+ TimeDomainBodyGyroscopeJerk_mean_Z (units radians/s)
-+ TimeDomainBodyAccelerometerMag_mean (units m/s^2)
-+ TimeDomainGravityAccelerometerMag_mean (units m/s^2)
-+ TimeDomainBodyAccelerometerJerkMag_mean (units m/s^2)
-+ TimeDomainBodyGyroscopeMag_mean (units radians/s)
-+ TimeDomainBodyGyroscopeJerkMag_mean (units radians/s)
-+ FreqDomainBodyAccelerometer_mean_X (units m/s^2)
-+ FreqDomainBodyAccelerometer_mean_Y (units m/s^2)
-+ FreqDomainBodyAccelerometer_mean_Z (units m/s^2)
-+ FreqDomainBodyAccelerometer_meanFreq_X (units m/s^2)
-+ FreqDomainBodyAccelerometer_meanFreq_Y (units m/s^2)
-+ FreqDomainBodyAccelerometer_meanFreq_Z (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_mean_X (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_mean_Y (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_mean_Z (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_meanFreq_X (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_meanFreq_Y (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_meanFreq_Z (units m/s^2)
-+ FreqDomainBodyGyroscope_mean_X (units radians/s)
-+ FreqDomainBodyGyroscope_mean_Y (units radians/s)
-+ FreqDomainBodyGyroscope_mean_Z (units radians/s)
-+ FreqDomainBodyGyroscope_meanFreq_X (units radians/s)
-+ FreqDomainBodyGyroscope_meanFreq_Y (units radians/s)
-+ FreqDomainBodyGyroscope_meanFreq_Z (units radians/s)
-+ FreqDomainBodyAccelerometerMag_mean (units m/s^2)
-+ FreqDomainBodyAccelerometerMag_meanFreq (units m/s^2)
-+ FreqDomainBodyAccelerometerJerkMag_mean (units m/s^2)
-+ FreqDomainBodyAccelerometerJerkMag_meanFreq (units m/s^2)
-+ FreqDomainBodyGyroscopeMag_mean (units radians/s)
-+ FreqDomainBodyGyroscopeMag_meanFreq (units radians/s)
-+ FreqDomainBodyGyroscopeJerkMag_mean (units radians/s)
-+ FreqDomainBodyGyroscopeJerkMag_meanFreq (units radians/s)
-+ TimeDomainBodyAccelerometer_std_X (units m/s^2)
-+ TimeDomainBodyAccelerometer_std_Y (units m/s^2)
-+ TimeDomainBodyAccelerometer_std_Z (units m/s^2)
-+ TimeDomainGravityAccelerometer_std_X (units m/s^2)
-+ TimeDomainGravityAccelerometer_std_Y (units m/s^2)
-+ TimeDomainGravityAccelerometer_std_Z (units m/s^2)
-+ TimeDomainBodyAccelerometerJerk_std_X (units m/s^2)
-+ TimeDomainBodyAccelerometerJerk_std_Y (units m/s^2)
-+ TimeDomainBodyAccelerometerJerk_std_Z (units m/s^2)
-+ TimeDomainBodyGyroscope_std_X (units radians/s)
-+ TimeDomainBodyGyroscope_std_Y (units radians/s)
-+ TimeDomainBodyGyroscope_std_Z (units radians/s)
-+ TimeDomainBodyGyroscopeJerk_std_X (units radians/s)
-+ TimeDomainBodyGyroscopeJerk_std_Y (units radians/s)
-+ TimeDomainBodyGyroscopeJerk_std_Z (units radians/s)
-+ TimeDomainBodyAccelerometerMag_std (units m/s^2)
-+ TimeDomainGravityAccelerometerMag_std (units m/s^2)
-+ TimeDomainBodyAccelerometerJerkMag_std (units m/s^2)
-+ TimeDomainBodyGyroscopeMag_std (units radians/s)
-+ TimeDomainBodyGyroscopeJerkMag_std (units radians/s)
-+ FreqDomainBodyAccelerometer_std_X (units m/s^2)
-+ FreqDomainBodyAccelerometer_std_Y (units m/s^2)
-+ FreqDomainBodyAccelerometer_std_Z (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_std_X (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_std_Y (units m/s^2)
-+ FreqDomainBodyAccelerometerJerk_std_Z (units m/s^2)
-+ FreqDomainBodyGyroscope_std_X (units radians/s)
-+ FreqDomainBodyGyroscope_std_Y (units radians/s)
-+ FreqDomainBodyGyroscope_std_Z (units radians/s)
-+ FreqDomainBodyAccelerometerMag_std (units m/s^2)
-+ FreqDomainBodyAccelerometerJerkMag_std (units m/s^2)
-+ FreqDomainBodyGyroscopeMag_std (units radians/s)
-+ FreqDomainBodyGyroscopeJerkMag_std (units radians/s)
