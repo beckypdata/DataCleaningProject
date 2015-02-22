@@ -72,8 +72,8 @@ fBody according to study documentation
 conventions.  These need to be resolved for subsequent steps of R script to work 
 accurately.  This is done by appending a unique identifier (index of the 
 vector within the 561 vector set) to the end of the variable name
-+ use of , and - are invalid characters for R variable names, and are 
-replaced with "_"
++ use of "," and "-" are invalid characters for R variable names, and are 
+replaced with ""
 + study variables include () presumably to indicate derivation by functions.  These are invalid for R variable names and could be inaccurately viewed as 
 functions in subsequent analysis
 

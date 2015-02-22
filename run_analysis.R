@@ -22,9 +22,7 @@ features$V2 <- gsub("fGravity","FreqDomainGravity",features$V2)
 features$V2 <- gsub("tGravity","TimeDomainGravity",features$V2) 
 features$V2 <- gsub("Acc","Accelerometer",features$V2) 
 features$V2 <- gsub("Gyro","Gyroscope",features$V2) 
-features$V2 <- gsub("[)(]","",features$V2) 
-features$V2 <- gsub("[-,]","_",features$V2) 
-features$V2 <- gsub("_$","",features$V2)
+features$V2 <- gsub("[-,)(]","",features$V2) 
 
 # Merge the datasets and calculate summary statistics 
 

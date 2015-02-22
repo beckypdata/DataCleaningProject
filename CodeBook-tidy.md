@@ -1,157 +1,157 @@
-TimeDomainBodyAccelerometer_mean_X N [-1,1] m/s^2 X-axis time domain derived Body linear acceleration, estimated mean
+TimeDomainBodyAccelerometermeanX N [-1,1] m/s^2 X-axis time domain derived Body linear acceleration, estimated mean
 
-TimeDomainBodyAccelerometer_mean_Y N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration, estimated mean
+TimeDomainBodyAccelerometermeanY N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration, estimated mean
 
-TimeDomainBodyAccelerometer_mean_Z   N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration, estimated mean
+TimeDomainBodyAccelerometermeanZ   N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration, estimated mean
 
-TimeDomainGravityAccelerometer_mean_X  N   [-1,1]    m/s^2   X-axis time domain derived Gravity linear acceleration, estimated mean
+TimeDomainGravityAccelerometermeanX  N   [-1,1]    m/s^2   X-axis time domain derived Gravity linear acceleration, estimated mean
 
-TimeDomainGravityAccelerometer_mean_Y  N   [-1,1]    m/s^2   Y-axis time domain derived Gravity linear acceleration, estimated mean
+TimeDomainGravityAccelerometermeanY  N   [-1,1]    m/s^2   Y-axis time domain derived Gravity linear acceleration, estimated mean
 
-TimeDomainGravityAccelerometer_mean_Z  N   [-1,1]    m/s^2   Z-axis time domain derived Gravity linear acceleration, estimated mean
+TimeDomainGravityAccelerometermeanZ  N   [-1,1]    m/s^2   Z-axis time domain derived Gravity linear acceleration, estimated mean
 
-TimeDomainBodyAccelerometerJerk_mean_X  N   [-1,1]    m/s^2   X-axis time domain derived Body linear acceleration Jerk signal, estimated mean
+TimeDomainBodyAccelerometerJerkmeanX  N   [-1,1]    m/s^2   X-axis time domain derived Body linear acceleration Jerk signal, estimated mean
 
-TimeDomainBodyAccelerometerJerk_mean_Y  N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration Jerk signal, estimated mean
+TimeDomainBodyAccelerometerJerkmeanY  N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration Jerk signal, estimated mean
 
-TimeDomainBodyAccelerometerJerk_mean_Z  N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration Jerk signal, estimated mean
+TimeDomainBodyAccelerometerJerkmeanZ  N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration Jerk signal, estimated mean
 
-TimeDomainBodyGyroscope_mean_X  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity, estimated mean
+TimeDomainBodyGyroscopemeanX  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity, estimated mean
 
-TimeDomainBodyGyroscope_mean_Y  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity, estimated mean
+TimeDomainBodyGyroscopemeanY  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity, estimated mean
 
-TimeDomainBodyGyroscope_mean_Z  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity, estimated mean
+TimeDomainBodyGyroscopemeanZ  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity, estimated mean
 
-TimeDomainBodyGyroscopeJerk_mean_X  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity Jerk signal, estimated mean
+TimeDomainBodyGyroscopeJerkmeanX  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity Jerk signal, estimated mean
 
-TimeDomainBodyGyroscopeJerk_mean_Y  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity Jerk signal, estimated mean
+TimeDomainBodyGyroscopeJerkmeanY  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity Jerk signal, estimated mean
 
-TimeDomainBodyGyroscopeJerk_mean_Z  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity Jerk signal, estimated mean
+TimeDomainBodyGyroscopeJerkmeanZ  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity Jerk signal, estimated mean
 
-TimeDomainBodyAccelerometerMag_mean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration, estimated mean
+TimeDomainBodyAccelerometerMagmean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration, estimated mean
 
-TimeDomainGravityAccelerometerMag_mean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Gravity linear acceleration, estimated mean
+TimeDomainGravityAccelerometerMagmean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Gravity linear acceleration, estimated mean
 
-TimeDomainBodyAccelerometerJerkMag_mean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration Jerk signal, estimated mean
+TimeDomainBodyAccelerometerJerkMagmean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration Jerk signal, estimated mean
 
-TimeDomainBodyGyroscopeMag_mean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity, estimated mean
+TimeDomainBodyGyroscopeMagmean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity, estimated mean
 
-TimeDomainBodyGyroscopeJerkMag_mean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity Jerk signal, estimated mean
+TimeDomainBodyGyroscopeJerkMagmean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity Jerk signal, estimated mean
 
-FreqDomainBodyAccelerometer_mean_X  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration, estimated mean
+FreqDomainBodyAccelerometermeanX  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration, estimated mean
 
-FreqDomainBodyAccelerometer_mean_Y  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration, estimated mean
+FreqDomainBodyAccelerometermeanY  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration, estimated mean
 
-FreqDomainBodyAccelerometer_mean_Z  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration, estimated mean
+FreqDomainBodyAccelerometermeanZ  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration, estimated mean
 
-FreqDomainBodyAccelerometer_meanFreq_X  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometermeanFreqX  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
 
-FreqDomainBodyAccelerometer_meanFreq_Y  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometermeanFreqY  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
 
-FreqDomainBodyAccelerometer_meanFreq_Z  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometermeanFreqZ  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
 
-FreqDomainBodyAccelerometerJerk_mean_X  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration Jerk signal, estimated mean
+FreqDomainBodyAccelerometerJerkmeanX  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration Jerk signal, estimated mean
 
-FreqDomainBodyAccelerometerJerk_mean_Y  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration Jerk signal, estimated mean
+FreqDomainBodyAccelerometerJerkmeanY  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration Jerk signal, estimated mean
 
-FreqDomainBodyAccelerometerJerk_mean_Z  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration Jerk signal, estimated mean
+FreqDomainBodyAccelerometerJerkmeanZ  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration Jerk signal, estimated mean
 
-FreqDomainBodyAccelerometerJerk_meanFreq_X  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometerJerkmeanFreqX  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
 
-FreqDomainBodyAccelerometerJerk_meanFreq_Y  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometerJerkmeanFreqY  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
 
-FreqDomainBodyAccelerometerJerk_meanFreq_Z  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometerJerkmeanFreqZ  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
 
-FreqDomainBodyGyroscope_mean_X  N   [-1,1]    radians/s   X-axis frequency domain derived Body angular velocity, estimated mean
+FreqDomainBodyGyroscopemeanX  N   [-1,1]    radians/s   X-axis frequency domain derived Body angular velocity, estimated mean
 
-FreqDomainBodyGyroscope_mean_Y  N   [-1,1]    radians/s   Y-axis frequency domain derived Body angular velocity, estimated mean
+FreqDomainBodyGyroscopemeanY  N   [-1,1]    radians/s   Y-axis frequency domain derived Body angular velocity, estimated mean
 
-FreqDomainBodyGyroscope_mean_Z  N   [-1,1]    radians/s   Z-axis frequency domain derived Body angular velocity, estimated mean
+FreqDomainBodyGyroscopemeanZ  N   [-1,1]    radians/s   Z-axis frequency domain derived Body angular velocity, estimated mean
 
-FreqDomainBodyGyroscope_meanFreq_X  N   [-1,1]    radians/s   X-axis frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
+FreqDomainBodyGyroscopemeanFreqX  N   [-1,1]    radians/s   X-axis frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
 
-FreqDomainBodyGyroscope_meanFreq_Y  N   [-1,1]    radians/s   Y-axis frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
+FreqDomainBodyGyroscopemeanFreqY  N   [-1,1]    radians/s   Y-axis frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
 
-FreqDomainBodyGyroscope_meanFreq_Z  N   [-1,1]    radians/s   Z-axis frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
+FreqDomainBodyGyroscopemeanFreqZ  N   [-1,1]    radians/s   Z-axis frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
 
-FreqDomainBodyAccelerometerMag_mean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration, estimated mean
+FreqDomainBodyAccelerometerMagmean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration, estimated mean
 
-FreqDomainBodyAccelerometerMag_meanFreq  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometerMagmeanFreq  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration, weighted average of frequency components for mean frequency
 
-FreqDomainBodyAccelerometerJerkMag_mean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration Jerk signal, estimated mean
+FreqDomainBodyAccelerometerJerkMagmean  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration Jerk signal, estimated mean
 
-FreqDomainBodyAccelerometerJerkMag_meanFreq  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
+FreqDomainBodyAccelerometerJerkMagmeanFreq  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration Jerk signal, weighted average of frequency components for mean frequency
 
-FreqDomainBodyGyroscopeMag_mean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity, estimated mean
+FreqDomainBodyGyroscopeMagmean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity, estimated mean
 
-FreqDomainBodyGyroscopeMag_meanFreq  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
+FreqDomainBodyGyroscopeMagmeanFreq  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity, weighted average of frequency components for mean frequency
 
-FreqDomainBodyGyroscopeJerkMag_mean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity Jerk signal, estimated mean
+FreqDomainBodyGyroscopeJerkMagmean  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity Jerk signal, estimated mean
 
-FreqDomainBodyGyroscopeJerkMag_meanFreq  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity Jerk signal, weighted average of frequency components for mean frequency
+FreqDomainBodyGyroscopeJerkMagmeanFreq  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity Jerk signal, weighted average of frequency components for mean frequency
 
-TimeDomainBodyAccelerometer_std_X  N   [-1,1]    m/s^2   X-axis time domain derived Body linear acceleration, estimated std
+TimeDomainBodyAccelerometerstdX  N   [-1,1]    m/s^2   X-axis time domain derived Body linear acceleration, estimated std
 
-TimeDomainBodyAccelerometer_std_Y  N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration, estimated std
+TimeDomainBodyAccelerometerstdY  N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration, estimated std
 
-TimeDomainBodyAccelerometer_std_Z  N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration, estimated std
+TimeDomainBodyAccelerometerstdZ  N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration, estimated std
 
-TimeDomainGravityAccelerometer_std_X  N   [-1,1]    m/s^2   X-axis time domain derived Gravity linear acceleration, estimated std
+TimeDomainGravityAccelerometerstdX  N   [-1,1]    m/s^2   X-axis time domain derived Gravity linear acceleration, estimated std
 
-TimeDomainGravityAccelerometer_std_Y  N   [-1,1]    m/s^2   Y-axis time domain derived Gravity linear acceleration, estimated std
+TimeDomainGravityAccelerometerstdY  N   [-1,1]    m/s^2   Y-axis time domain derived Gravity linear acceleration, estimated std
 
-TimeDomainGravityAccelerometer_std_Z  N   [-1,1]    m/s^2   Z-axis time domain derived Gravity linear acceleration, estimated std
+TimeDomainGravityAccelerometerstdZ  N   [-1,1]    m/s^2   Z-axis time domain derived Gravity linear acceleration, estimated std
 
-TimeDomainBodyAccelerometerJerk_std_X  N   [-1,1]    m/s^2   X-axis time domain derived Body linear acceleration Jerk signal, estimated std
+TimeDomainBodyAccelerometerJerkstdX  N   [-1,1]    m/s^2   X-axis time domain derived Body linear acceleration Jerk signal, estimated std
 
-TimeDomainBodyAccelerometerJerk_std_Y  N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration Jerk signal, estimated std
+TimeDomainBodyAccelerometerJerkstdY  N   [-1,1]    m/s^2   Y-axis time domain derived Body linear acceleration Jerk signal, estimated std
 
-TimeDomainBodyAccelerometerJerk_std_Z  N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration Jerk signal, estimated std
+TimeDomainBodyAccelerometerJerkstdZ  N   [-1,1]    m/s^2   Z-axis time domain derived Body linear acceleration Jerk signal, estimated std
 
-TimeDomainBodyGyroscope_std_X  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity, estimated std
+TimeDomainBodyGyroscopestdX  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity, estimated std
 
-TimeDomainBodyGyroscope_std_Y  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity, estimated std
+TimeDomainBodyGyroscopestdY  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity, estimated std
 
-TimeDomainBodyGyroscope_std_Z  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity, estimated std
+TimeDomainBodyGyroscopestdZ  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity, estimated std
 
-TimeDomainBodyGyroscopeJerk_std_X  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity Jerk signal, estimated std
+TimeDomainBodyGyroscopeJerkstdX  N   [-1,1]    radians/s   X-axis time domain derived Body angular velocity Jerk signal, estimated std
 
-TimeDomainBodyGyroscopeJerk_std_Y  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity Jerk signal, estimated std
+TimeDomainBodyGyroscopeJerkstdY  N   [-1,1]    radians/s   Y-axis time domain derived Body angular velocity Jerk signal, estimated std
 
-TimeDomainBodyGyroscopeJerk_std_Z  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity Jerk signal, estimated std
+TimeDomainBodyGyroscopeJerkstdZ  N   [-1,1]    radians/s   Z-axis time domain derived Body angular velocity Jerk signal, estimated std
 
-TimeDomainBodyAccelerometerMag_std  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration, estimated std
+TimeDomainBodyAccelerometerMagstd  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration, estimated std
 
-TimeDomainGravityAccelerometerMag_std  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Gravity linear acceleration, estimated std
+TimeDomainGravityAccelerometerMagstd  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Gravity linear acceleration, estimated std
 
-TimeDomainBodyAccelerometerJerkMag_std  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration Jerk signal, estimated std
+TimeDomainBodyAccelerometerJerkMagstd  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of time domain derived Body linear acceleration Jerk signal, estimated std
 
-TimeDomainBodyGyroscopeMag_std  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity, estimated std
+TimeDomainBodyGyroscopeMagstd  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity, estimated std
 
-TimeDomainBodyGyroscopeJerkMag_std  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity Jerk signal, estimated std
+TimeDomainBodyGyroscopeJerkMagstd  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of time domain derived Body angular velocity Jerk signal, estimated std
 
-FreqDomainBodyAccelerometer_std_X  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration, estimated std
+FreqDomainBodyAccelerometerstdX  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration, estimated std
 
-FreqDomainBodyAccelerometer_std_Y  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration, estimated std
+FreqDomainBodyAccelerometerstdY  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration, estimated std
 
-FreqDomainBodyAccelerometer_std_Z  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration, estimated std
+FreqDomainBodyAccelerometerstdZ  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration, estimated std
 
-FreqDomainBodyAccelerometerJerk_std_X  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration Jerk signal, estimated std
+FreqDomainBodyAccelerometerJerkstdX  N   [-1,1]    m/s^2   X-axis frequency domain derived Body linear acceleration Jerk signal, estimated std
 
-FreqDomainBodyAccelerometerJerk_std_Y  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration Jerk signal, estimated std
+FreqDomainBodyAccelerometerJerkstdY  N   [-1,1]    m/s^2   Y-axis frequency domain derived Body linear acceleration Jerk signal, estimated std
 
-FreqDomainBodyAccelerometerJerk_std_Z  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration Jerk signal, estimated std
+FreqDomainBodyAccelerometerJerkstdZ  N   [-1,1]    m/s^2   Z-axis frequency domain derived Body linear acceleration Jerk signal, estimated std
 
-FreqDomainBodyGyroscope_std_X  N   [-1,1]    radians/s   X-axis frequency domain derived Body angular velocity, estimated std
+FreqDomainBodyGyroscopestdX  N   [-1,1]    radians/s   X-axis frequency domain derived Body angular velocity, estimated std
 
-FreqDomainBodyGyroscope_std_Y  N   [-1,1]    radians/s   Y-axis frequency domain derived Body angular velocity, estimated std
+FreqDomainBodyGyroscopestdY  N   [-1,1]    radians/s   Y-axis frequency domain derived Body angular velocity, estimated std
 
-FreqDomainBodyGyroscope_std_Z  N   [-1,1]    radians/s   Z-axis frequency domain derived Body angular velocity, estimated std
+FreqDomainBodyGyroscopestdZ  N   [-1,1]    radians/s   Z-axis frequency domain derived Body angular velocity, estimated std
 
-FreqDomainBodyAccelerometerMag_std  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration, estimated std
+FreqDomainBodyAccelerometerMagstd  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration, estimated std
 
-FreqDomainBodyAccelerometerJerkMag_std  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration Jerk signal, estimated std
+FreqDomainBodyAccelerometerJerkMagstd  N   [-1,1]    m/s^2   Euclidean norm calculated magnitude of frequency domain derived Body linear acceleration Jerk signal, estimated std
 
-FreqDomainBodyGyroscopeMag_std  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity, estimated std
+FreqDomainBodyGyroscopeMagstd  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity, estimated std
 
-FreqDomainBodyGyroscopeJerkMag_std  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity Jerk signal, estimated std
+FreqDomainBodyGyroscopeJerkMagstd  N   [-1,1]    radians/s   Euclidean norm calculated magnitude of frequency domain derived Body angular velocity Jerk signal, estimated std
